@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Frames</title>
+  <!-- <link rel="stylesheet" href="../public/styles/startGame.css"> -->
+  <link rel="stylesheet" href="/styles/startGame.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container px-1 py-1 my-5">
+    <div class="frame-container">
+      <img src="<%= link %>" alt="movie frame" class="movie-frame">
+      <!-- <img src="https://variety.com/wp-content/uploads/2014/01/sonah-khan_salman-khan_jai-ho-4a.jpg?w=1000&h=667&crop=1&resize=1360%2C907" alt="movie frame" class="movie-frame"> -->
+    </div>
+  </div>
+  <div class="input-section">
+    <% if (locals.lastGame) { %>
+      <form action="/finish" method="POST" class="input-form">        
+    <% } else { %>
+      <form action="/submit" method="POST" class="input-form">
+    <% } %>  
+        <textarea name="userInput" placeholder="Guess the movie name" class="text-area" ></textarea>
+        <div class="button-row">
+          <button type="submit" class="btn btn-success submit-button" onclick="makeInputRequired(true)">Submit</button>
+          <% if (locals.lastGame) { %>
+            <button type="submit" formaction="/finish" class="btn btn-warning next-button" onclick="makeInputRequired(true)">Finish</button>
+          <% } else { %>
+            <button type="submit" formaction="/skip" class="btn btn-primary next-button" onclick="makeInputRequired(false)">Skip Frame</button>
+          <% } %>
+        </div>
+      </form>
+  </div>
+  <script>
+    function makeInputRequired(isRequired) {
+      const input = document.getElementById('userInput');
+      if (isRequired) {
+        input.setAttribute('required', 'required');
+      } else {
+        input.removeAttribute('required');
+      }
+    }
+  </script>
+</body>
+</html>

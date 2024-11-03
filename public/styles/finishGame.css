@@ -1,0 +1,46 @@
+.title{
+    font-size: 5rem;
+}
+
+.custom-border-bottom {
+    border-bottom: 1px solid #CB9DF0 !important;
+    /* border-radius: 25px; */
+}
+
+
+.finalScore{
+    font-size: 4rem;
+}
+.subText{
+    font-size: 2rem;
+}
+p{
+    font-size: 2rem;
+}
+
+.btn-success {
+    background-color: #b771f0 !important;
+    border-color: #CB9DF0 !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+/* Hover effects */
+.btn-success:hover {
+    background-color: #CB9DF0 !important;
+    border-color: #b771f0 !important;
+}
+
+.container{
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px #CB9DF0 !important;
+    background-color: #FDDBBB;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #FFF9BF !important;
+}
